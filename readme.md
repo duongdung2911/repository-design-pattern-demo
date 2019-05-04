@@ -1,4 +1,4 @@
-<p align="center"><img width=200 src="https://hocvienagile.com/wp-content/uploads/2018/12/CodeGymLogo.jpg"></p>
+<p><img width=200 src="https://hocvienagile.com/wp-content/uploads/2018/12/CodeGymLogo.jpg"></p>
 Dung Duong
 
 ## Giới thiệu về project

@@ -37,4 +37,9 @@ class CustomerController extends Controller
         ]);
         return $this->customerService->update($customerId, $request->all());
     }
+
+    public function delete()
+    {
+
+    }
 }

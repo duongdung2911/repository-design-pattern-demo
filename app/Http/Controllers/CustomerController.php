@@ -27,7 +27,7 @@ class CustomerController extends Controller
     public function edit($customerId)
     {
         $customer = $this->customerService->getCustomerById($customerId);
-        return view('welcome', compact('customer'));
+        return view('edit', compact('customer'));
     }
 
     public function update(Request $request, $customerId) {

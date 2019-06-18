@@ -40,7 +40,7 @@ class CustomerController extends Controller
 
     public function delete()
     {
-
+        return false;
     }
     public function destroy()
     {

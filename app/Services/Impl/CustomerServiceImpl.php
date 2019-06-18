@@ -9,6 +9,7 @@
 namespace App\Services\Impl;
 
 
+use App\Exceptions\NotFoundException;
 use App\Repositories\CustomerRepositoryInterface;
 use App\Services\CustomerServiceInterface;
 
@@ -57,8 +58,27 @@ class CustomerServiceImpl implements CustomerServiceInterface
         // TODO: Implement delete() method.
     }
 
-    public function update($userId, $data = [])
+    public function update($customerId, $data = [])
     {
-        // TODO: Implement update() method.
+        $customer = $this->customerRepository->find($customerId);
+        if ($customer) {
+            $customer->name = $data['name'];
+            $customer->email = $data['email'];
+
+            $this->customerRepository->update($customer);
+            return $customer;
+        } else {
+            throw new NotFoundException();
+        }
+    }
+
+    public function getCustomerById($customerId)
+    {
+        $customer = $this->customerRepository->find($customerId);
+        if (!$customer) {
+            throw new NotFoundException();
+        }
+
+        return $customer;
     }
 }

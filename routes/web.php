@@ -11,8 +11,8 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/customers', 'CustomerController@index')->name('customers.index')->middleware('checkName');
 
-Route::get('/customers', 'CustomerController@index')->name('customers.index');
+Auth::routes();
+
+Route::get('/', 'HomeController@index')->name('home');

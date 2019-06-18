@@ -20,4 +20,6 @@ interface CustomerServiceInterface
     public function delete($userId);
 
     public function update($userId, $data = []);
+
+    public function getCustomerById($customerId);
 }

@@ -17,8 +17,8 @@ class CustomerController extends Controller
 
     public function index()
     {
-        // Gọi đến phương thức index dưới tầng service
-        $customers = $this->customerService->index();
+        // Gọi đến phương thức getAll() dưới tầng service
+        $customers = $this->customerService->getAll();
 
         // Trả kết quả nhận được từ tầng service ra ngoài view
         return view('welcome', compact('customers'));

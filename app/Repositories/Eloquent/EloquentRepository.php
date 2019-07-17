@@ -35,12 +35,6 @@ abstract class EloquentRepository implements Repository
         return $result;
     }
 
-    public function paginate($size = 20)
-    {
-        $result = $this->model->paginate($size);
-        return $result;
-    }
-
     public function create($object)
     {
         return $object->save();
@@ -49,6 +43,12 @@ abstract class EloquentRepository implements Repository
     public function delete($id)
     {
         return $this->model->destroy($id);
+    }
+    
+    public function paginate($size = 20)
+    {
+        $result = $this->model->paginate($size);
+        return $result;
     }
 
     public function deleteAll($ids = [])

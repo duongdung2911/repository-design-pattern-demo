@@ -17,11 +17,6 @@ class CustomerServiceImpl implements CustomerServiceInterface
 {
     protected $customerRepository;
 
-    /**
-     * CustomerServiceImpl constructor.
-     * @param CustomerRepositoryInterface $customerRepository
-     * Tiêm lớp CustomerRepositoryInterface
-     */
     public function __construct(CustomerRepositoryInterface $customerRepository)
     {
         $this->customerRepository = $customerRepository;

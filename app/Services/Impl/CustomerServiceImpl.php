@@ -22,12 +22,11 @@ class CustomerServiceImpl implements CustomerServiceInterface
         $this->customerRepository = $customerRepository;
     }
 
-    public function index()
+    public function getAll()
     {
         /**
          * Gọi đến phương thức getAll() dưới tầng Repository
          * Lấy ra tất cả các customer
-         * Xử lý các logic liên quan
          */
         $customers = $this->customerRepository->getAll();
 
@@ -36,6 +35,20 @@ class CustomerServiceImpl implements CustomerServiceInterface
             return false;
 
         return $customers;
+    }
+    
+    public function update($customerId, $data = [])
+    {
+        $customer = $this->customerRepository->find($customerId);
+        if ($customer) {
+            $customer->name = $data['name'];
+            $customer->email = $data['email'];
+
+            $this->customerRepository->update($customer);
+            return $customer;
+        } else {
+            throw new NotFoundException();
+        }
     }
 
     public function create($data = [])
@@ -51,20 +64,6 @@ class CustomerServiceImpl implements CustomerServiceInterface
     public function delete($userId)
     {
         // TODO: Implement delete() method.
-    }
-
-    public function update($customerId, $data = [])
-    {
-        $customer = $this->customerRepository->find($customerId);
-        if ($customer) {
-            $customer->name = $data['name'];
-            $customer->email = $data['email'];
-
-            $this->customerRepository->update($customer);
-            return $customer;
-        } else {
-            throw new NotFoundException();
-        }
     }
 
     public function getCustomerById($customerId)

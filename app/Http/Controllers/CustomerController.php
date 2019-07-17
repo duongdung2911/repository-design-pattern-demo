@@ -23,19 +23,19 @@ class CustomerController extends Controller
         // Trả kết quả nhận được từ tầng service ra ngoài view
         return view('welcome', compact('customers'));
     }
-
-    public function edit($customerId)
-    {
-        $customer = $this->customerService->getCustomerById($customerId);
-        return view('edit', compact('customer'));
-    }
-
+    
     public function update(Request $request, $customerId) {
         $this->validate($request, [
             'name' => 'required|max:255',
             'email' => 'required',
         ]);
         return $this->customerService->update($customerId, $request->all());
+    }
+
+    public function edit($customerId)
+    {
+        $customer = $this->customerService->getCustomerById($customerId);
+        return view('edit', compact('customer'));
     }
 
     public function delete()

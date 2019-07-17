@@ -84,17 +84,19 @@
                     <p>Repository Design Pattern Demo</p>
                     <p>CodeGym</p>
                 </div>
-
-                @if(!isset($customers) || !$customers || count($customers) == 0)
-                    <button>
-                        <a href="{{route('customers.index')}}">Show Customers</a>
-                    </button>
+                
+                <button>
+                    <a href="{{route('customers.index')}}">Show Customers</a>
+                </button>
+                
+                <button>
+                    <a href="{{url('/')}}">Back</a>
+                </button>
+                
+                @if(!isset($customers) || count($customers) == 0)
                     <p>Chưa có dữ liệu</p>
                 @else
                     @foreach($customers as $customer)
-                        <button>
-                            <a href="{{url('/')}}">Back</a>
-                        </button>
                         <p>Name: {{ $customer->name }}</p>
                     @endforeach
                 @endif

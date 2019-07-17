@@ -12,5 +12,5 @@ namespace App\Repositories;
 interface CustomerRepositoryInterface extends Repository
 {
     // Phương thức riêng của đối tượng Customer
-    public function findByName($name);
+    public function pay($items, $money);
 }

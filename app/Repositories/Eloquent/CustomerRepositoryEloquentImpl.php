@@ -15,7 +15,7 @@ use App\Repositories\CustomerRepositoryInterface;
 class CustomerRepositoryEloquentImpl extends EloquentRepository implements CustomerRepositoryInterface
 {
     /**
-     * Ghi đè phương thức trừu tượng getModel của lớp Repository
+     * Ghi đè phương thức trừu tượng getModel của Eloquen Repository
      * Nhận vào User Model
      */
     public function getModel()

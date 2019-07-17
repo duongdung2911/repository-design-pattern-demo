@@ -9,7 +9,7 @@ class CustomerController extends Controller
 {
     protected $customerService;
 
-    // Tiêm CustomerServiceInterface vào trong hàm khởi tạo
+    // Tiêm đối tượng CustomerService vào trong hàm khởi tạo
     public function __construct(CustomerServiceInterface $customerService)
     {
         $this->customerService = $customerService;

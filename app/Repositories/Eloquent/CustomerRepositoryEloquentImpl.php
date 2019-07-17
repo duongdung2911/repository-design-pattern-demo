@@ -25,6 +25,6 @@ class CustomerRepositoryEloquentImpl extends EloquentRepository implements Custo
 
     public function pay($items, $money)
     {
-        // TODO: Implement findByName() method.
+        // TODO: something code
     }
 }

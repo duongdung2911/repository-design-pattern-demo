@@ -8,7 +8,7 @@
 
 namespace App\Repositories;
 
-// Kế thừa các phương thức mô tả chung từ lớp Repository
+// Kế thừa các phương thức mô tả chung từ interface Repository
 interface CustomerRepositoryInterface extends Repository
 {
     // Phương thức riêng của đối tượng Customer

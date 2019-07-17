@@ -8,7 +8,7 @@
 
 namespace App\Repositories;
 
-// Mô tả các phương thức chung mà các Model đều cần sử dụng
+// Mô tả các phương thức chung mà các Repositories đều cần phải có
 interface Repository
 {
     public function getAll();

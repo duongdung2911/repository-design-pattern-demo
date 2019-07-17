@@ -11,7 +11,7 @@ namespace App\Repositories\Eloquent;
 
 use App\Repositories\Repository;
 
-// Triển khai các phương thức chung của lớp Repository
+// Triển khai các phương thức chung của interface Repository
 abstract class EloquentRepository implements Repository
 {
     protected $model;
